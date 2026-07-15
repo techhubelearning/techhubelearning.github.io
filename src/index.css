@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root styles */
+:root {
+  --color-primary: #00bcd4;
+  --color-secondary: #6366f1;
+  --color-accent: #a855f7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-x-hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyan-500 rounded-lg hover:bg-cyan-400;
+}
+
+/* Glassmorphism cards */
+.glass {
+  @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-xl;
+}
+
+.glass-dark {
+  @apply backdrop-blur-md bg-slate-900/40 border border-white/10 rounded-xl;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-600 bg-clip-text text-transparent;
+}
+
+/* Animated gradient background */
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    #0f172a,
+    #1e293b,
+    #0f172a,
+    #1e293b
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Particle styles */
+.particle {
+  @apply absolute rounded-full opacity-50;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-transparent border-2 border-cyan-500 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300;
+}
+
+/* Smooth fade animation */
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Loading animation */
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth shadow glow */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+}
+
+.shadow-glow-hover:hover {
+  box-shadow: 0 0 30px rgba(0, 188, 212, 0.5);
+  transition: all 0.3s ease;
+}
